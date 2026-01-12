@@ -1,0 +1,19 @@
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data # This is the magic part for the 4GB file
+
+  frontend:
+    image: node:20-slim
+    working_dir: /app
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+    command: sh -c "npm install --legacy-peer-deps && npm start"
+    environment:
+      - WDS_SOCKET_PORT=0
