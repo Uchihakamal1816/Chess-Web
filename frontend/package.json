@@ -1,0 +1,22 @@
+{
+  "name": "chess-web-frontend",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "start": "vite --host --port 3000",
+    "dev": "vite --host --port 3000",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.13.2",
+    "chess.js": "^1.4.0",
+    "react": "^18.2.0",
+    "react-chessboard": "^4.7.2",
+    "react-dom": "^18.2.0",
+    "stockfish": "^17.1.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

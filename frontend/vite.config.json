@@ -1,0 +1,19 @@
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    host: true,
+    port: 3000,
+    headers: {
+      // 1. Mandatory for SharedArrayBuffer (Stockfish Multi-threading)
+      "Cross-Origin-Embedder-Policy": "require-corp",
+      "Cross-Origin-Opener-Policy": "same-origin",
+      // 2. Mandatory for the sub-workers (The 7 blocked requests)
+      "Cross-Origin-Resource-Policy": "cross-origin",
+      // 3. Cache control to ensure changes are picked up
+      "Cache-Control": "no-store",
+    },
+  },
+});
